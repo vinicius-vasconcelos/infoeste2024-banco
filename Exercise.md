@@ -190,29 +190,24 @@ db.products.find({}, { _id: 0, name: 1, price: 1 })
 
 ---
 
-### Exercício 8: Exiba nomes e estoques dos produtos!
+### Exercício 8: Exiba o nome e o estoque do produto "Monitor"!
 
-Realize uma consulta para mostrar apenas os campos `name` e `stock` dos produtos.
+Realize uma consulta para mostrar apenas os campos `name` e `stock` do produto cujo nome é "Monitor".
 
 **Resultado esperado:**
 
 ```bash
-[
-  { name: "Notebook", stock: 10 },
-  { name: "Smartphone", stock: 20 },
-  { name: "Camiseta", stock: 100 },
-  { name: "Calça", stock: 50 },
-  { name: "Fone de Ouvido", stock: 30 },
-  { name: "Tênis", stock: 25 },
-  { name: "Monitor", stock: 15 }
-]
+{ name: "Monitor", stock: 15 }
 ```
 
 <details>
 <summary>Resposta</summary>
 
 ```bash
-db.products.find({}, { name: 1, stock: 1 })
+db.products.find(
+  { name: { $eq: "Monitor" } },
+  { _id: 0, name: 1, stock: 1 }
+)
 ```
 
 </details>
