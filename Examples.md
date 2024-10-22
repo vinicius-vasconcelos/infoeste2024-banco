@@ -19,7 +19,7 @@ db.customers.insertMany([
   { name: "Ana", age: 22, city: "Curitiba", purchases: 12, status: "ativo", interests: ["moda", "beleza"] },
   { name: "Carlos", age: 40, city: "São Paulo", purchases: 8, status: "ativo", interests: ["tecnologia", "esportes"] },
   { name: "Lucas", age: 30, city: "Brasília", purchases: 3, status: "inativo", interests: ["eletrônicos", "livros"] },
-  { name: "Fernanda", age: 26, city: "Salvador", purchases: 6, status: "ativo", interests: ["viagem", "moda"] },
+  { name: "Fernanda", age: 26, city: "Salvador", purchases: 6, status: "inativa", interests: ["viagem", "moda"] },
   { name: "Pedro", age: 29, city: "Recife", purchases: 10, status: "ativo", interests: ["viagem", "esportes"] },
   { name: "Roberta", age: 31, city: "São Paulo", purchases: 4, status: "inativo", interests: ["beleza", "moda"] }
 ])
@@ -56,7 +56,7 @@ db.customers.find({ purchases: { $lt: 5 } })
 ### 5. Buscar documentos com pessoas com idade menor ou igual a 25 usando `$lte`:
 
 ```bash
-db.customers.find({ age: { $lte: 25 } })
+db.customers.find({ age: { $lte: 26 } })
 ```
 
 ---
