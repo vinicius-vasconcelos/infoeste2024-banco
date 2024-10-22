@@ -50,25 +50,11 @@ db.products.insertMany([
 
 </details>
 
-## Consultas 🔍
+## Consultas e Alterações 🔍✏️
 
 ### Exercício 3: Recupere todos os produtos da loja!
 
 Realize uma consulta para buscar todos os produtos cadastrados na sua coleção.
-
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Notebook", price: 2500, category: "eletrônicos", stock: 10 },
-  { name: "Smartphone", price: 1500, category: "eletrônicos", stock: 20 },
-  { name: "Camiseta", price: 50, category: "moda", stock: 100 },
-  { name: "Calça", price: 80, category: "moda", stock: 50 },
-  { name: "Fone de Ouvido", price: 200, category: "eletrônicos", stock: 30 },
-  { name: "Tênis", price: 120, category: "moda", stock: 25 },
-  { name: "Monitor", price: 700, category: "eletrônicos", stock: 15 }
-]
-```
 
 <details>
 <summary>Resposta</summary>
@@ -85,15 +71,6 @@ db.products.find()
 
 Recupere apenas os dois primeiros produtos da sua coleção.
 
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Notebook", price: 2500, category: "eletrônicos", stock: 10 },
-  { name: "Smartphone", price: 1500, category: "eletrônicos", stock: 20 }
-]
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -108,18 +85,6 @@ db.products.find().limit(2)
 ### Exercício 5: Ignorar os dois primeiros produtos!
 
 Busque todos os produtos, mas ignore os dois primeiros da lista.
-
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Camiseta", price: 50, category: "moda", stock: 100 },
-  { name: "Calça", price: 80, category: "moda", stock: 50 },
-  { name: "Fone de Ouvido", price: 200, category: "eletrônicos", stock: 30 },
-  { name: "Tênis", price: 120, category: "moda", stock: 25 },
-  { name: "Monitor", price: 700, category: "eletrônicos", stock: 15 }
-]
-```
 
 <details>
 <summary>Resposta</summary>
@@ -136,20 +101,6 @@ db.products.find().skip(2)
 
 Recupere os produtos, mas exiba apenas os campos `_id` e `name`.
 
-**Resultado esperado:**
-
-```bash
-[
-  { _id: ObjectId("..."), name: "Notebook" },
-  { _id: ObjectId("..."), name: "Smartphone" },
-  { _id: ObjectId("..."), name: "Camiseta" },
-  { _id: ObjectId("..."), name: "Calça" },
-  { _id: ObjectId("..."), name: "Fone de Ouvido" },
-  { _id: ObjectId("..."), name: "Tênis" },
-  { _id: ObjectId("..."), name: "Monitor" }
-]
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -165,20 +116,6 @@ db.products.find({}, { _id: 1, name: 1 })
 
 Recupere os produtos, mostrando apenas os campos `name` e `price`.
 
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Notebook", price: 2500 },
-  { name: "Smartphone", price: 1500 },
-  { name: "Camiseta", price: 50 },
-  { name: "Calça", price: 80 },
-  { name: "Fone de Ouvido", price: 200 },
-  { name: "Tênis", price: 120 },
-  { name: "Monitor", price: 700 }
-]
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -193,12 +130,6 @@ db.products.find({}, { _id: 0, name: 1, price: 1 })
 ### Exercício 8: Exiba o nome e o estoque do produto "Monitor"!
 
 Realize uma consulta para mostrar apenas os campos `name` e `stock` do produto cujo nome é "Monitor".
-
-**Resultado esperado:**
-
-```bash
-{ name: "Monitor", stock: 15 }
-```
 
 <details>
 <summary>Resposta</summary>
@@ -218,14 +149,6 @@ db.products.find(
 
 Realize uma consulta para encontrar os produtos que possuem o preço exatamente igual a R$ 50.
 
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Camiseta", price: 50, category: "moda", stock: 100 }
-]
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -240,18 +163,6 @@ db.products.find({ price: { $eq: 50 } })
 ### Exercício 10: Busque produtos com preço superior a R$ 100!
 
 Recupere os produtos que têm preço superior a R$ 100.
-
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Notebook", price: 2500, category: "eletrônicos", stock: 10 },
-  { name: "Smartphone", price: 1500, category: "eletrônicos", stock: 20 },
-  { name: "Fone de Ouvido", price: 200, category: "eletrônicos", stock: 30 },
-  { name: "Tênis", price: 120, category: "moda", stock: 25 },
-  { name: "Monitor", price: 700, category: "eletrônicos", stock: 15 }
-]
-```
 
 <details>
 <summary>Resposta</summary>
@@ -268,16 +179,6 @@ db.products.find({ price: { $gt: 100 } })
 
 Encontre os produtos cujo estoque é menor ou igual a 20.
 
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Notebook", price: 2500, category: "eletrônicos", stock: 10 },
-  { name: "Fone de Ouvido", price: 200, category: "eletrônicos", stock: 30 },
-  { name: "Tênis", price: 120, category: "moda", stock: 25 }
-]
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -293,17 +194,6 @@ db.products.find({ stock: { $lt: 20 } })
 
 Recupere todos os produtos que pertencem à categoria "eletrônicos".
 
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Notebook", price: 2500, category: "eletrônicos", stock: 10 },
-  { name: "Smartphone", price: 1500, category: "eletrônicos", stock: 20 },
-  { name: "Fone de Ouvido", price: 200, category: "eletrônicos", stock: 30 },
-  { name: "Monitor", price: 700, category: "eletrônicos", stock: 15 }
-]
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -318,15 +208,6 @@ db.products.find({ category: "eletrônicos" })
 ### Exercício 13: Busque produtos da categoria Moda com estoque acima de 50!
 
 Realize uma consulta para encontrar todos os produtos da categoria "moda" que têm estoque maior que 50.
-
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Camiseta", price: 50, category: "moda", stock: 100 }
-]
-
-```
 
 <details>
 <summary>Resposta</summary>
@@ -348,15 +229,6 @@ db.products.find({
 
 Realize uma consulta no banco de dados para encontrar produtos que atendam a pelo menos uma das condições.
 
-**Resultado esperado:**
-
-```bash
-[
-  { name: "Camiseta", price: 50, category: "moda", stock: 100 },
-  { name: "Calça", price: 80, category: "moda", stock: 50 }
-]
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -377,18 +249,6 @@ db.products.find({
 
 Realize uma atualização para alterar o preço do produto chamado "Smartphone" para R$950.
 
-**Resultado esperado:**
-
-```bash
-{
-  "acknowledged": true,
-  "matchedCount": 1,
-  "modifiedCount": 1,
-  "upsertedId": null,
-  "upsertedCount": 0
-}
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -407,16 +267,6 @@ db.products.updateOne(
 
 Atualize o estoque de todos os produtos cujo preço é menor ou igual a R$950, configurando o estoque para 0.
 
-**Resultado esperado:**
-
-```bash
-{
-  "acknowledged": true,
-  "matchedCount": 3,
-  "modifiedCount": 3
-}
-```
-
 <details>
 <summary>Resposta</summary>
 
@@ -434,12 +284,6 @@ db.products.updateMany(
 ### Exercício 17: Exclua produtos com estoque igual a 0!
 
 Realize uma exclusão para remover todos os produtos cujo estoque está igual a 0.
-
-**Resultado esperado:**
-
-```bash
-{ acknowledged: true, deletedCount: 2 }
-```
 
 <details>
 <summary>Resposta</summary>
