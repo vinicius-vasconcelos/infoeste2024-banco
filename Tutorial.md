@@ -7,12 +7,12 @@ Boas vindas ao tutorial do curso **Explorando MongoDB: Um Guia Prático para Ini
 
 MongoDB é um banco de dados orientado a documentos, projetado para facilitar o desenvolvimento e o dimensionamento de aplicativos. Em vez de utilizar tabelas como nos bancos relacionais, o MongoDB armazena dados em documentos JSON-like, permitindo flexibilidade no armazenamento.
 
-- Documentação oficial: [MongoDB Manual](https://www.mongodb.com/pt-br/docs/manual/introduction/)
-
 ## Estrutura do MongoDB 🗂️
 
-- **collections**: Agrupam documentos semelhantes, análogo às tabelas em bancos relacionais.
+- **Collections**: Agrupam documentos semelhantes, análogo às tabelas em bancos relacionais.
 - **Document**: Um documento é um registro que contém pares de campo-valor (semelhante a um objeto JSON).
+
+> _Para mais informações, acesse a documentação oficial: [MongoDB Manual](https://www.mongodb.com/pt-br/docs/manual/introduction/)_
 
 ## Comandos CRUD no MongoDB 🗃️
 
@@ -49,7 +49,7 @@ O MongoDB permite inserir documentos em coleções usando os métodos abaixo:
 
 ### Pesquisando Documentos 🔍
 
-1. Para buscar documentos em uma coleção, utilize o método `find()`. Você pode aplicar filtros para refinar os resultados.
+Para buscar documentos em uma coleção, utilize o método `find()`. Você pode aplicar filtros para refinar os resultados.
 
 - **Buscar todos os documentos:**
   ```bash
@@ -65,7 +65,7 @@ O MongoDB permite inserir documentos em coleções usando os métodos abaixo:
 
 ### Atualizando Documentos ✏️
 
-2. Para modificar documentos existentes, use os métodos `updateOne()` ou `updateMany()`.
+Para modificar documentos existentes, use os métodos `updateOne()` ou `updateMany()`.
 
 - **Atualizar um documento:**
   ```bash
@@ -81,7 +81,7 @@ O MongoDB permite inserir documentos em coleções usando os métodos abaixo:
 
 ### Deletando Documentos 🗑️
 
-3. Para remover documentos de uma coleção, utilize os métodos `deleteOne()` ou `deleteMany()`.
+Para remover documentos de uma coleção, utilize os métodos `deleteOne()` ou `deleteMany()`.
 
 - **Deletar um documento:**
   ```bash
@@ -97,7 +97,7 @@ O MongoDB permite inserir documentos em coleções usando os métodos abaixo:
 
 ### Deletando Coleções 🗑️
 
-4. Para remover uma coleção no MongoDB, utilize o método `drop()`. Lembre-se de que essa ação é irreversível!
+Para remover uma coleção no MongoDB, utilize o método `drop()`. Lembre-se de que essa ação é irreversível!
 
 - **Deletar uma coleção específica**:
   ```bash
@@ -106,7 +106,7 @@ O MongoDB permite inserir documentos em coleções usando os métodos abaixo:
 
 ### Deletando um Banco de Dados 🗑️
 
-5. Para remover um banco de dados no MongoDB, utilize o método `dropDatabase()`. Essa ação também é irreversível!
+Para remover um banco de dados no MongoDB, utilize o método `dropDatabase()`. Essa ação também é irreversível!
 
 - **Deletar um banco de dados**:
   ```bash
@@ -124,7 +124,7 @@ O MongoDB oferece uma vasta gama de operadores para construir consultas complexa
 - **Arrays**: `$all`, `$elemMatch`, `$size`
 - **Projeção**: `$`, `$elemMatch`, `$meta`, `$slice`
 
-_Para mais detalhes, consulte a [documentação oficial de operadores do MongoDB](https://www.mongodb.com/pt-br/docs/manual/reference/operator/query/#query-selectors)._
+> _Para mais detalhes, consulte a [documentação oficial de operadores do MongoDB](https://www.mongodb.com/pt-br/docs/manual/reference/operator/query/#query-selectors)._
 
 ## Exemplos Práticos 🔍
 
