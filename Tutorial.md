@@ -1,3 +1,4 @@
+
 # Tutorial: Explorando MongoDB 🍃
 
 Bem-vindo ao tutorial do curso **Explorando MongoDB: Um Guia Prático para Iniciantes**. Aqui você encontrará os principais conceitos e comandos utilizados no MongoDB, conforme apresentados durante as aulas.
@@ -34,7 +35,12 @@ O MongoDB permite inserir documentos em coleções usando os métodos abaixo:
 
 - **Inserir múltiplos documentos:**
   ```bash
-  db.people.insertMany([{ name: "João", age: 30 }, { name: "Ana", age: 22 }])
+  db.people.insertMany([
+    { name: "João", age: 30 },
+    { name: "Ana", age: 22 },
+    { name: "Joyce", age: 28 },
+    { name: "Vinicius", age: 28 },
+  ])
   ```
 
 ### Pesquisando Documentos 🔍
@@ -48,7 +54,7 @@ Para buscar documentos em uma coleção, utilize o método `find()`. Você pode 
 
 - **Buscar com critérios:**
   ```bash
-  db.people.find({ age: { $gt: 22 } })
+  db.people.find({ age: { $gt: 25 } })
   ```
 
 ### Atualizando Documentos ✏️
@@ -76,7 +82,25 @@ Para remover documentos de uma coleção, utilize os métodos `deleteOne()` ou `
 
 - **Deletar múltiplos documentos:**
   ```bash
-  db.people.deleteMany({ status: "inativo" })
+  db.people.deleteMany({ status: "ativo" })
+  ```
+
+### Deletando Coleções 🗑️❌
+
+Para remover uma coleção no MongoDB, utilize o método `drop()`. Lembre-se de que essa ação é irreversível!
+
+- **Deletar uma coleção específica**:
+  ```bash
+  db.people.drop()
+  ```
+
+### Deletando um Banco de Dados 🗑️❌
+
+Para remover um banco de dados no MongoDB, utilize o método `dropDatabase()`. Essa ação também é irreversível!
+
+- **Deletar um banco de dados**:
+  ```bash
+  db.dropDatabase()
   ```
 
 ## Operadores de Consulta e Projeção 🔧
@@ -95,7 +119,3 @@ Para mais detalhes, consulte a [documentação oficial de operadores do MongoDB]
 ## Exemplos Práticos 🔍
 
 Para ver mais exemplos práticos de como aplicar esses operadores de consulta no MongoDB, acesse o arquivo [Examples.md](./Examples.md), onde você poderá praticar consultas com base em uma base de dados simulada.
-
----
-
-Esse tutorial fornece uma visão geral dos principais comandos usados no curso. Para mais exemplos, explore o [Examples.md](./Examples.md), ou pergunte ao instrutor se tiver dúvidas específicas!
