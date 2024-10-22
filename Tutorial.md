@@ -1,7 +1,7 @@
 
 # Tutorial: Explorando MongoDB 🍃
 
-Bem-vindo ao tutorial do curso **Explorando MongoDB: Um Guia Prático para Iniciantes**. Aqui você encontrará os principais conceitos e comandos utilizados no MongoDB, conforme apresentados durante as aulas.
+Boas vindas ao tutorial do curso **Explorando MongoDB: Um Guia Prático para Iniciantes**. Aqui você encontrará os principais conceitos e comandos utilizados no MongoDB, conforme apresentados durante as aulas.
 
 ## O que é MongoDB? 🤔
 
@@ -11,10 +11,10 @@ MongoDB é um banco de dados orientado a documentos, projetado para facilitar o 
 
 ## Estrutura do MongoDB 🗂️
 
-- **people**: Agrupam documentos semelhantes, análogo às tabelas em bancos relacionais.
+- **collections**: Agrupam documentos semelhantes, análogo às tabelas em bancos relacionais.
 - **Document**: Um documento é um registro que contém pares de campo-valor (semelhante a um objeto JSON).
 
-## Comandos CRUD no MongoDB 🔄
+## Comandos CRUD no MongoDB 🗃️
 
 ### Criando um Banco de Dados 📂
 
@@ -23,6 +23,8 @@ Para criar ou acessar um banco de dados no MongoDB, utilize o comando `use`. Se 
 ```bash
 use people
 ```
+
+---
 
 ### Inserindo Documentos 📝
 
@@ -43,9 +45,11 @@ O MongoDB permite inserir documentos em coleções usando os métodos abaixo:
   ])
   ```
 
+---
+
 ### Pesquisando Documentos 🔍
 
-Para buscar documentos em uma coleção, utilize o método `find()`. Você pode aplicar filtros para refinar os resultados.
+1. Para buscar documentos em uma coleção, utilize o método `find()`. Você pode aplicar filtros para refinar os resultados.
 
 - **Buscar todos os documentos:**
   ```bash
@@ -57,9 +61,11 @@ Para buscar documentos em uma coleção, utilize o método `find()`. Você pode 
   db.people.find({ age: { $gt: 25 } })
   ```
 
+---
+
 ### Atualizando Documentos ✏️
 
-Para modificar documentos existentes, use os métodos `updateOne()` ou `updateMany()`.
+2. Para modificar documentos existentes, use os métodos `updateOne()` ou `updateMany()`.
 
 - **Atualizar um documento:**
   ```bash
@@ -71,9 +77,11 @@ Para modificar documentos existentes, use os métodos `updateOne()` ou `updateMa
   db.people.updateMany({ age: { $lt: 30 } }, { $set: { status: "ativo" } })
   ```
 
+---
+
 ### Deletando Documentos 🗑️
 
-Para remover documentos de uma coleção, utilize os métodos `deleteOne()` ou `deleteMany()`.
+3. Para remover documentos de uma coleção, utilize os métodos `deleteOne()` ou `deleteMany()`.
 
 - **Deletar um documento:**
   ```bash
@@ -85,18 +93,20 @@ Para remover documentos de uma coleção, utilize os métodos `deleteOne()` ou `
   db.people.deleteMany({ status: "ativo" })
   ```
 
-### Deletando Coleções 🗑️❌
+---
 
-Para remover uma coleção no MongoDB, utilize o método `drop()`. Lembre-se de que essa ação é irreversível!
+### Deletando Coleções 🗑️
+
+4. Para remover uma coleção no MongoDB, utilize o método `drop()`. Lembre-se de que essa ação é irreversível!
 
 - **Deletar uma coleção específica**:
   ```bash
   db.people.drop()
   ```
 
-### Deletando um Banco de Dados 🗑️❌
+### Deletando um Banco de Dados 🗑️
 
-Para remover um banco de dados no MongoDB, utilize o método `dropDatabase()`. Essa ação também é irreversível!
+5. Para remover um banco de dados no MongoDB, utilize o método `dropDatabase()`. Essa ação também é irreversível!
 
 - **Deletar um banco de dados**:
   ```bash
@@ -114,7 +124,7 @@ O MongoDB oferece uma vasta gama de operadores para construir consultas complexa
 - **Arrays**: `$all`, `$elemMatch`, `$size`
 - **Projeção**: `$`, `$elemMatch`, `$meta`, `$slice`
 
-Para mais detalhes, consulte a [documentação oficial de operadores do MongoDB](https://www.mongodb.com/pt-br/docs/manual/reference/operator/query/#query-selectors).
+_Para mais detalhes, consulte a [documentação oficial de operadores do MongoDB](https://www.mongodb.com/pt-br/docs/manual/reference/operator/query/#query-selectors)._
 
 ## Exemplos Práticos 🔍
 
