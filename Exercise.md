@@ -183,7 +183,7 @@ Recupere os produtos, mostrando apenas os campos `name` e `price`.
 <summary>Resposta</summary>
 
 ```bash
-db.products.find({}, { name: 1, price: 1 })
+db.products.find({}, { _id: 0, name: 1, price: 1 })
 ```
 
 </details>
