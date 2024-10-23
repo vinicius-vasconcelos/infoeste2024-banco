@@ -223,7 +223,7 @@ db.products.find({
 
 </details>
 
-
+---
 
 ### Exercício 14: Busque produtos com estoque superior a 50 ou preço inferior a R$100!
 
