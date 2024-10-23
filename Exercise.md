@@ -294,6 +294,51 @@ db.products.deleteMany({ stock: { $eq: 0 } })
 
 </details>
 
+## Exercícios Bônus 🎉
+
+### Exercício 18: Atualize múltiplos campos de um produto!
+
+Realize uma atualização para alterar o preço e o estoque do produto "Smartphone", definindo o preço para R$1800 e o estoque para 85.
+
+<details> <summary>Resposta</summary>
+
+```bash
+db.products.updateOne(
+  { name: { $eq: "Smartphone" } },
+  { $set: { price: 1800, stock: 85 } }
+)
+```
+
+</details>
+
+---
+
+### Exercício 19: Conte quantos documentos existem na coleção!
+
+Realize uma consulta para contar quantos documentos estão presentes na coleção `products`.
+
+<details> <summary>Resposta</summary>
+
+```bash
+db.products.countDocuments()
+```
+
+</details>
+
+---
+
+### Exercício 20: Exclua a base de dados!
+
+Realize uma operação para excluir a base de dados chamada `myStore`.
+
+<details> <summary>Resposta</summary>
+
+```bash
+db.dropDatabase()
+```
+
+</details>
+
 ---
 
 Esses exercícios cobrem a criação da base de dados, inserção de produtos e várias consultas para solidificar o conhecimento sobre MongoDB. Boa sorte! 🍀
