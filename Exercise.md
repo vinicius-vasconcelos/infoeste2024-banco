@@ -320,7 +320,7 @@ Realize uma consulta para contar quantos documentos estão presentes na coleçã
 <details> <summary>Resposta</summary>
 
 ```bash
-db.products.countDocuments()
+db.products.count()
 ```
 
 </details>
