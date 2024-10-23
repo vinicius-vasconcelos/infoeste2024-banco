@@ -183,7 +183,7 @@ Encontre os produtos cujo estoque é menor ou igual a 20.
 <summary>Resposta</summary>
 
 ```bash
-db.products.find({ stock: { $lt: 20 } })
+db.products.find({ stock: { $lte: 20 } })
 ```
 
 </details>
