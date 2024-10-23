@@ -263,16 +263,16 @@ db.products.updateOne(
 
 ---
 
-### Exercício 16: Altere o estoque dos produtos com preço menor ou igual a R$950 para 0!
+### Exercício 16: Altere o estoque dos produtos com preço menor a R$950 para 0!
 
-Atualize o estoque de todos os produtos cujo preço é menor ou igual a R$950, configurando o estoque para 0.
+Atualize o estoque de todos os produtos cujo preço é menor a R$950, configurando o estoque para 0.
 
 <details>
 <summary>Resposta</summary>
 
 ```bash
 db.products.updateMany(
-  { price: { $lte: 950 } },
+  { price: { $lt: 950 } },
   { $set: { stock: 0 } }
 )
 ```
@@ -289,9 +289,7 @@ Realize uma exclusão para remover todos os produtos cujo estoque está igual a 
 <summary>Resposta</summary>
 
 ```bash
-db.products.deleteMany(
-  { stock: 0 }
-)
+db.products.deleteMany({ stock: { $eq: 0 } })
 ```
 
 </details>
